@@ -1,0 +1,36 @@
+`timescale 1 ns/ 1 ns
+module AES_encryp_top_vlg_tst();
+// constants                                           
+// test vector input registers
+reg clk;
+reg [127:0] iKey;
+reg [127:0] iPlaintext;
+reg rst_n;
+// wires                                               
+wire [127:0]  oCiphertext;
+
+// assign statements (if any)                          
+AES_encryp_top i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.iKey(iKey),
+	.iPlaintext(iPlaintext),
+	.oCiphertext(oCiphertext),
+	.rst_n(rst_n)
+);
+initial                                                
+begin                                                  
+	#0 	clk = 0;
+		rst_n = 0;
+	#5	rst_n = 1;
+		iKey = 128'h31_32_33_34_35_36_37_38_39_30_31_32_33_34_35_36;
+		iPlaintext = 128'h30_39_38_37_36_35_34_33_32_31_36_35_34_33_32_31;
+$display("Running testbench");                       
+end                                                    
+always
+	#10 clk = ~clk;
+begin                                                  
+                                            
+end                                                    
+endmodule
+
