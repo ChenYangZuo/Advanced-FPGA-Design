@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Apr 30 20:59:01 2021
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : FPU
+Top-level Entity Name : FPU
+Family : Cyclone 10 LP
+Total logic elements : 2,009
+    Total combinational functions : 1,670
+    Dedicated logic registers : 971
+Total registers : 971
+Total pins : 100
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 7
+Total PLLs : 0

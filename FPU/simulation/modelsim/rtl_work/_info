@@ -1,0 +1,122 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Programme/Verilog/FPU/simulation/modelsim
+vadder
+Z1 !s110 1620358711
+!i10b 1
+!s100 8ek:Z`<z[6IhGkR]NRBc51
+I]`OAh9ZI]WUEYL4PmTP5H2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1619784945
+8D:/Programme/Verilog/FPU/src/adder.v
+FD:/Programme/Verilog/FPU/src/adder.v
+L0 5
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1620358711.000000
+!s107 D:/Programme/Verilog/FPU/src/adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Programme/Verilog/FPU/src|D:/Programme/Verilog/FPU/src/adder.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+D:/Programme/Verilog/FPU/src
+Z7 tCvgOpt 0
+vdivider
+R1
+!i10b 1
+!s100 RU2VW<990k9ZnBeBG[?Ml2
+Ij;15hj?INBoBQlPb1]GCM3
+R2
+R0
+w1619751050
+8D:/Programme/Verilog/FPU/src/divider.v
+FD:/Programme/Verilog/FPU/src/divider.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Programme/Verilog/FPU/src/divider.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Programme/Verilog/FPU/src|D:/Programme/Verilog/FPU/src/divider.v|
+!i113 1
+R5
+R6
+R7
+vFPU
+Z8 !s110 1620358712
+!i10b 1
+!s100 8;`Ej:^C6e;@7D?KX7lCk0
+IGB@a>7;Hf<CIYj>h>i@AA0
+R2
+R0
+w1619786978
+8D:/Programme/Verilog/FPU/FPU.v
+FD:/Programme/Verilog/FPU/FPU.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z9 !s108 1620358712.000000
+!s107 D:/Programme/Verilog/FPU/FPU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Programme/Verilog/FPU|D:/Programme/Verilog/FPU/FPU.v|
+!i113 1
+R5
+Z10 !s92 -vlog01compat -work work +incdir+D:/Programme/Verilog/FPU
+R7
+n@f@p@u
+vFPU_tb
+R8
+!i10b 1
+!s100 1WKQR<[j:ihD@KS1T<0Z`0
+IVnKoU2^0IT80RS3=@3=Cz1
+R2
+R0
+w1619787519
+8D:/Programme/Verilog/FPU/FPU_tb.v
+FD:/Programme/Verilog/FPU/FPU_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+R9
+!s107 D:/Programme/Verilog/FPU/FPU_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Programme/Verilog/FPU|D:/Programme/Verilog/FPU/FPU_tb.v|
+!i113 1
+R5
+R10
+R7
+n@f@p@u_tb
+vmultiplier
+R1
+!i10b 1
+!s100 lMN0J42@=zSLQcZK8=Q_f0
+IcIUNa`1De08EVPVBzNXKj3
+R2
+R0
+w1619750840
+8D:/Programme/Verilog/FPU/src/multiplier.v
+FD:/Programme/Verilog/FPU/src/multiplier.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Programme/Verilog/FPU/src/multiplier.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Programme/Verilog/FPU/src|D:/Programme/Verilog/FPU/src/multiplier.v|
+!i113 1
+R5
+R6
+R7
