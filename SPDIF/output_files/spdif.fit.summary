@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Jun 02 12:48:57 2021
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : spdif
+Top-level Entity Name : audio_spdif
+Family : Cyclone 10 LP
+Device : 10CL006YU256A7G
+Timing Models : Final
+Total logic elements : 305 / 6,272 ( 5 % )
+    Total combinational functions : 211 / 6,272 ( 3 % )
+    Dedicated logic registers : 218 / 6,272 ( 3 % )
+Total registers : 218
+Total pins : 87 / 177 ( 49 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

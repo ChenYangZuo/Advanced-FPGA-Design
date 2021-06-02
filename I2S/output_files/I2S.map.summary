@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Jun 01 20:09:23 2021
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : I2S
+Top-level Entity Name : audio_spdif
+Family : Cyclone 10 LP
+Total logic elements : 84
+    Total combinational functions : 66
+    Dedicated logic registers : 56
+Total registers : 56
+Total pins : 47
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

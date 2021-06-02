@@ -1,0 +1,157 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "inport_tready_o",
+					"strict" : false
+				},
+				{
+					"name" : "spdif_o",
+					"strict" : false
+				},
+				{
+					"name" : "clk_i",
+					"strict" : false
+				},
+				{
+					"name" : "rst_i",
+					"strict" : false
+				},
+				{
+					"name" : "audio_clk_i",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[6]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[5]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[4]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[7]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[13]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[14]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[12]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[15]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[2]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[1]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[0]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[3]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[10]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[9]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[8]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[11]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[22]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[21]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[20]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[23]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[29]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[30]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[28]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[31]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[18]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[17]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[16]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[19]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[26]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[25]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[24]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[27]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,357 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "outport_tready_o",
+					"strict" : false
+				},
+				{
+					"name" : "spdif_o",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[0]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[1]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[2]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[3]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[4]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[5]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[6]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[7]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[8]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[9]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[10]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[11]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[12]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[13]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[14]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[15]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[16]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[17]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[18]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[19]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[20]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[21]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[22]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataL[23]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[10]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[11]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[12]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[13]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[14]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[15]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[16]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[17]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[18]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[19]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[20]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[21]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[22]",
+					"strict" : false
+				},
+				{
+					"name" : "oDataR[23]",
+					"strict" : false
+				},
+				{
+					"name" : "oDatavalidL",
+					"strict" : false
+				},
+				{
+					"name" : "oDatavalidR",
+					"strict" : false
+				},
+				{
+					"name" : "clk_i",
+					"strict" : false
+				},
+				{
+					"name" : "rst_i",
+					"strict" : false
+				},
+				{
+					"name" : "audio_clk_i",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[6]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[5]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[4]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[7]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[13]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[14]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[12]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[15]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[2]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[1]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[0]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[3]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[10]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[9]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[8]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[11]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[22]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[21]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[20]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[23]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[29]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[30]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[28]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[31]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[18]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[17]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[16]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[19]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[26]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[25]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[24]",
+					"strict" : false
+				},
+				{
+					"name" : "inport_tdata_i[27]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,82 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "06/02/2021 11:23:13"
+                                                                                
+// Verilog Test Bench template for design : audio_spdif
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ns/ 1 ns
+module audio_spdif_vlg_tst();
+// constants                                           
+// general purpose registers
+
+// test vector input registers
+reg audio_clk_i;
+reg clk_i;
+reg [31:0] inport_tdata_i;
+reg rst_i;
+// wires                                               
+wire [23:0] oDataL;
+wire [23:0] oDataR;
+wire oDatavalidL;
+wire oDatavalidR;
+wire outport_tready_o;
+wire spdif_o;
+
+// assign statements (if any)                          
+audio_spdif i1 (
+// port map - connection between master ports and signals/registers   
+	.audio_clk_i(audio_clk_i),
+	.clk_i(clk_i),
+	.inport_tdata_i(inport_tdata_i),
+	.oDataL(oDataL),
+	.oDataR(oDataR),
+	.oDatavalidL(oDatavalidL),
+	.oDatavalidR(oDatavalidR),
+	.outport_tready_o(outport_tready_o),
+	.rst_i(rst_i),
+	.spdif_o(spdif_o)
+);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+	#0	clk_i=0;
+		rst_i=1;
+		audio_clk_i=0;
+	#5	rst_i=0;
+		inport_tdata_i=32'habc12345;                                                       
+// --> end                                             
+$display("Running testbench");                       
+end                                                    
+
+always #10
+begin                                                  
+clk_i = ~clk_i;
+end
+
+always #20
+begin                                                  
+audio_clk_i = ~audio_clk_i;
+end                                                  
+endmodule
+

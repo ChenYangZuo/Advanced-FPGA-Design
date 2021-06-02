@@ -1,0 +1,1286 @@
+TimeQuest Timing Analyzer report for I2S
+Tue Jun 01 20:09:34 2021
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 125C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 125C Model Setup Summary
+  8. Slow 1200mV 125C Model Hold Summary
+  9. Slow 1200mV 125C Model Recovery Summary
+ 10. Slow 1200mV 125C Model Removal Summary
+ 11. Slow 1200mV 125C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 125C Model Setup: 'clk_i'
+ 13. Slow 1200mV 125C Model Hold: 'clk_i'
+ 14. Slow 1200mV 125C Model Metastability Summary
+ 15. Slow 1200mV -40C Model Fmax Summary
+ 16. Slow 1200mV -40C Model Setup Summary
+ 17. Slow 1200mV -40C Model Hold Summary
+ 18. Slow 1200mV -40C Model Recovery Summary
+ 19. Slow 1200mV -40C Model Removal Summary
+ 20. Slow 1200mV -40C Model Minimum Pulse Width Summary
+ 21. Slow 1200mV -40C Model Setup: 'clk_i'
+ 22. Slow 1200mV -40C Model Hold: 'clk_i'
+ 23. Slow 1200mV -40C Model Metastability Summary
+ 24. Fast 1200mV -40C Model Setup Summary
+ 25. Fast 1200mV -40C Model Hold Summary
+ 26. Fast 1200mV -40C Model Recovery Summary
+ 27. Fast 1200mV -40C Model Removal Summary
+ 28. Fast 1200mV -40C Model Minimum Pulse Width Summary
+ 29. Fast 1200mV -40C Model Setup: 'clk_i'
+ 30. Fast 1200mV -40C Model Hold: 'clk_i'
+ 31. Fast 1200mV -40C Model Metastability Summary
+ 32. Multicorner Timing Analysis Summary
+ 33. Board Trace Model Assignments
+ 34. Input Transition Times
+ 35. Signal Integrity Metrics (Slow 1200mv n40c Model)
+ 36. Signal Integrity Metrics (Slow 1200mv 125c Model)
+ 37. Signal Integrity Metrics (Fast 1200mv n40c Model)
+ 38. Setup Transfers
+ 39. Hold Transfers
+ 40. Report TCCS
+ 41. Report RSKM
+ 42. Unconstrained Paths Summary
+ 43. Clock Status Summary
+ 44. Unconstrained Input Ports
+ 45. Unconstrained Output Ports
+ 46. Unconstrained Input Ports
+ 47. Unconstrained Output Ports
+ 48. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest Spectra-Q                                 ;
+; Revision Name         ; I2S                                                 ;
+; Device Family         ; Cyclone 10 LP                                       ;
+; Device Name           ; 10CL006YU256A7G                                     ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.03        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   1.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clk_i      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_i } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++--------------------------------------------------+
+; Slow 1200mV 125C Model Fmax Summary              ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 241.43 MHz ; 241.43 MHz      ; clk_i      ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++--------------------------------------+
+; Slow 1200mV 125C Model Setup Summary ;
++-------+--------+---------------------+
+; Clock ; Slack  ; End Point TNS       ;
++-------+--------+---------------------+
+; clk_i ; -3.142 ; -72.285             ;
++-------+--------+---------------------+
+
+
++-------------------------------------+
+; Slow 1200mV 125C Model Hold Summary ;
++-------+-------+---------------------+
+; Clock ; Slack ; End Point TNS       ;
++-------+-------+---------------------+
+; clk_i ; 0.429 ; 0.000               ;
++-------+-------+---------------------+
+
+
+-------------------------------------------
+; Slow 1200mV 125C Model Recovery Summary ;
+-------------------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Slow 1200mV 125C Model Removal Summary ;
+------------------------------------------
+No paths to report.
+
+
++----------------------------------------------------+
+; Slow 1200mV 125C Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------------------+
+; Clock ; Slack  ; End Point TNS                     ;
++-------+--------+-----------------------------------+
+; clk_i ; -3.000 ; -86.272                           ;
++-------+--------+-----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 125C Model Setup: 'clk_i'                                                                                                                        ;
++--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.142 ; spdif_core:u_core|bit_count_q[1]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 4.063      ;
+; -3.137 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 4.058      ;
+; -2.965 ; spdif_core:u_core|audio_sample_q[14]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 3.885      ;
+; -2.913 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.834      ;
+; -2.763 ; spdif_core:u_core|audio_sample_q[10]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.078     ; 3.682      ;
+; -2.749 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.670      ;
+; -2.674 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.595      ;
+; -2.671 ; spdif_core:u_core|audio_sample_q[5]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.592      ;
+; -2.664 ; spdif_core:u_core|bit_count_q[1]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.585      ;
+; -2.659 ; spdif_core:u_core|audio_sample_q[9]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 3.579      ;
+; -2.654 ; spdif_core:u_core|audio_sample_q[1]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.575      ;
+; -2.649 ; spdif_core:u_core|audio_sample_q[6]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.570      ;
+; -2.626 ; spdif_core:u_core|audio_sample_q[4]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.547      ;
+; -2.616 ; spdif_core:u_core|audio_sample_q[0]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.537      ;
+; -2.604 ; spdif_core:u_core|audio_sample_q[3]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.525      ;
+; -2.554 ; spdif_core:u_core|audio_sample_q[11]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.475      ;
+; -2.505 ; spdif_core:u_core|audio_sample_q[2]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.075     ; 3.427      ;
+; -2.499 ; spdif_core:u_core|audio_sample_q[12]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 3.419      ;
+; -2.487 ; spdif_core:u_core|audio_sample_q[14]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 3.407      ;
+; -2.459 ; spdif_core:u_core|audio_sample_q[7]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.380      ;
+; -2.447 ; spdif_core:u_core|audio_sample_q[8]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.368      ;
+; -2.433 ; spdif_core:u_core|audio_sample_q[13]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 3.353      ;
+; -2.375 ; spdif_core:u_core|audio_sample_q[15]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 3.295      ;
+; -2.315 ; spdif_core:u_core|audio_sample_q[10]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.078     ; 3.234      ;
+; -2.218 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.139      ;
+; -2.208 ; spdif_core:u_core|audio_sample_q[9]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 3.128      ;
+; -2.206 ; spdif_core:u_core|audio_sample_q[1]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.127      ;
+; -2.203 ; spdif_core:u_core|preamble_q[4]       ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 3.123      ;
+; -2.202 ; spdif_core:u_core|audio_sample_q[5]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.123      ;
+; -2.201 ; spdif_core:u_core|audio_sample_q[6]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.122      ;
+; -2.168 ; spdif_core:u_core|audio_sample_q[0]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.089      ;
+; -2.166 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.087      ;
+; -2.157 ; spdif_core:u_core|audio_sample_q[4]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.078      ;
+; -2.156 ; spdif_core:u_core|audio_sample_q[3]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.077      ;
+; -2.106 ; spdif_core:u_core|audio_sample_q[11]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.027      ;
+; -2.092 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 3.013      ;
+; -2.077 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.998      ;
+; -2.057 ; spdif_core:u_core|audio_sample_q[2]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.075     ; 2.979      ;
+; -2.049 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[2]     ; clk_i        ; clk_i       ; 1.000        ; -0.075     ; 2.971      ;
+; -2.049 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[1]     ; clk_i        ; clk_i       ; 1.000        ; -0.075     ; 2.971      ;
+; -2.049 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[10]    ; clk_i        ; clk_i       ; 1.000        ; -0.075     ; 2.971      ;
+; -2.049 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[8]     ; clk_i        ; clk_i       ; 1.000        ; -0.075     ; 2.971      ;
+; -2.023 ; spdif_core:u_core|preamble_q[6]       ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 2.943      ;
+; -2.021 ; spdif_core:u_core|audio_sample_q[12]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 2.941      ;
+; -2.011 ; spdif_core:u_core|audio_sample_q[7]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.932      ;
+; -1.999 ; spdif_core:u_core|audio_sample_q[8]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.920      ;
+; -1.985 ; spdif_core:u_core|audio_sample_q[13]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 2.905      ;
+; -1.972 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.893      ;
+; -1.927 ; spdif_core:u_core|audio_sample_q[15]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 2.847      ;
+; -1.849 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.770      ;
+; -1.799 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.720      ;
+; -1.740 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.661      ;
+; -1.714 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.635      ;
+; -1.641 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[1]     ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.564      ;
+; -1.641 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[2]     ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.564      ;
+; -1.641 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[8]     ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.564      ;
+; -1.641 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[10]    ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.564      ;
+; -1.633 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[4]     ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.556      ;
+; -1.633 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[5]     ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.556      ;
+; -1.633 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[3]     ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.556      ;
+; -1.633 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[12]    ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.556      ;
+; -1.633 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[13]    ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.556      ;
+; -1.633 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[11]    ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.556      ;
+; -1.633 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[15]    ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.556      ;
+; -1.633 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[9]     ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.556      ;
+; -1.633 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[6]     ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.556      ;
+; -1.633 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[14]    ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.556      ;
+; -1.633 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[7]     ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.556      ;
+; -1.633 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[0]     ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.556      ;
+; -1.618 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.539      ;
+; -1.576 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.497      ;
+; -1.575 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.496      ;
+; -1.531 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.452      ;
+; -1.515 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 1.000        ; -0.075     ; 2.437      ;
+; -1.475 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.396      ;
+; -1.434 ; spdif_core:u_core|subframe_count_q[7] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.355      ;
+; -1.429 ; spdif_core:u_core|preamble_q[5]       ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 2.349      ;
+; -1.408 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.329      ;
+; -1.396 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.317      ;
+; -1.361 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 1.000        ; -0.075     ; 2.283      ;
+; -1.352 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 2.272      ;
+; -1.338 ; spdif_core:u_core|subframe_count_q[6] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.259      ;
+; -1.322 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[11]  ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 2.242      ;
+; -1.314 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[4]   ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 2.234      ;
+; -1.304 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[12]  ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 2.224      ;
+; -1.299 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 1.000        ; -0.075     ; 2.221      ;
+; -1.268 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.189      ;
+; -1.257 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 1.000        ; -0.076     ; 2.178      ;
+; -1.250 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_req_o        ; clk_i        ; clk_i       ; 1.000        ; -0.074     ; 2.173      ;
+; -1.244 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[8]   ; clk_i        ; clk_i       ; 1.000        ; -0.077     ; 2.164      ;
+; -1.225 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[0]     ; clk_i        ; clk_i       ; 1.000        ; -0.073     ; 2.149      ;
+; -1.225 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[3]     ; clk_i        ; clk_i       ; 1.000        ; -0.073     ; 2.149      ;
+; -1.225 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[5]     ; clk_i        ; clk_i       ; 1.000        ; -0.073     ; 2.149      ;
+; -1.225 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[4]     ; clk_i        ; clk_i       ; 1.000        ; -0.073     ; 2.149      ;
+; -1.225 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[14]    ; clk_i        ; clk_i       ; 1.000        ; -0.073     ; 2.149      ;
+; -1.225 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[12]    ; clk_i        ; clk_i       ; 1.000        ; -0.073     ; 2.149      ;
+; -1.225 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[6]     ; clk_i        ; clk_i       ; 1.000        ; -0.073     ; 2.149      ;
+; -1.225 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[13]    ; clk_i        ; clk_i       ; 1.000        ; -0.073     ; 2.149      ;
+; -1.225 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[11]    ; clk_i        ; clk_i       ; 1.000        ; -0.073     ; 2.149      ;
+; -1.225 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[15]    ; clk_i        ; clk_i       ; 1.000        ; -0.073     ; 2.149      ;
++--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 125C Model Hold: 'clk_i'                                                                                                                        ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.429 ; spdif_core:u_core|bit_toggle_q        ; spdif_core:u_core|bit_toggle_q        ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 0.693      ;
+; 0.429 ; spdif_core:u_core|parity_count_q[0]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 0.693      ;
+; 0.463 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|bit_count_q[5]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 0.727      ;
+; 0.672 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[1] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 0.937      ;
+; 0.673 ; spdif_core:u_core|subframe_count_q[6] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 0.938      ;
+; 0.673 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[3] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 0.938      ;
+; 0.674 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 0.939      ;
+; 0.676 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 0.941      ;
+; 0.676 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[2] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 0.941      ;
+; 0.681 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|bit_count_q[3]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 0.945      ;
+; 0.685 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|bit_count_q[4]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 0.949      ;
+; 0.702 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[0]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 0.966      ;
+; 0.727 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[0] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 0.992      ;
+; 0.737 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|bit_count_q[2]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.001      ;
+; 0.759 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.024      ;
+; 0.760 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.025      ;
+; 0.814 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.079      ;
+; 0.830 ; spdif_core:u_core|sample_buf_q[14]    ; spdif_core:u_core|audio_sample_q[14]  ; clk_i        ; clk_i       ; 0.000        ; 0.073      ; 1.092      ;
+; 0.867 ; spdif_core:u_core|bit_count_q[1]      ; spdif_core:u_core|bit_count_q[1]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.131      ;
+; 0.880 ; spdif_core:u_core|sample_buf_q[7]     ; spdif_core:u_core|audio_sample_q[7]   ; clk_i        ; clk_i       ; 0.000        ; 0.072      ; 1.141      ;
+; 0.926 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.191      ;
+; 0.937 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.202      ;
+; 0.939 ; spdif_core:u_core|subframe_count_q[8] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.204      ;
+; 0.941 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.206      ;
+; 0.951 ; spdif_core:u_core|sample_buf_q[13]    ; spdif_core:u_core|audio_sample_q[13]  ; clk_i        ; clk_i       ; 0.000        ; 0.073      ; 1.213      ;
+; 0.955 ; spdif_core:u_core|sample_buf_q[3]     ; spdif_core:u_core|audio_sample_q[3]   ; clk_i        ; clk_i       ; 0.000        ; 0.072      ; 1.216      ;
+; 0.956 ; spdif_core:u_core|subframe_count_q[8] ; spdif_core:u_core|preamble_q[4]       ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.220      ;
+; 0.965 ; spdif_core:u_core|sample_buf_q[15]    ; spdif_core:u_core|audio_sample_q[15]  ; clk_i        ; clk_i       ; 0.000        ; 0.073      ; 1.227      ;
+; 0.966 ; spdif_core:u_core|subframe_count_q[8] ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.230      ;
+; 0.967 ; spdif_core:u_core|sample_buf_q[5]     ; spdif_core:u_core|audio_sample_q[5]   ; clk_i        ; clk_i       ; 0.000        ; 0.072      ; 1.228      ;
+; 0.978 ; spdif_core:u_core|sample_buf_q[1]     ; spdif_core:u_core|audio_sample_q[1]   ; clk_i        ; clk_i       ; 0.000        ; 0.073      ; 1.240      ;
+; 0.984 ; spdif_core:u_core|spdif_out_q         ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.248      ;
+; 0.991 ; spdif_core:u_core|sample_buf_q[9]     ; spdif_core:u_core|audio_sample_q[9]   ; clk_i        ; clk_i       ; 0.000        ; 0.073      ; 1.253      ;
+; 0.999 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[2] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.264      ;
+; 1.001 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.266      ;
+; 1.002 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.267      ;
+; 1.008 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|bit_count_q[4]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.272      ;
+; 1.023 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.288      ;
+; 1.023 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[1]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.287      ;
+; 1.023 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[3] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.288      ;
+; 1.024 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.289      ;
+; 1.024 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.289      ;
+; 1.024 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[2]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.288      ;
+; 1.028 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.293      ;
+; 1.028 ; spdif_core:u_core|subframe_count_q[7] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.293      ;
+; 1.032 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.297      ;
+; 1.032 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|bit_count_q[5]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.296      ;
+; 1.048 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[1] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.313      ;
+; 1.049 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[2] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.314      ;
+; 1.066 ; spdif_core:u_core|subframe_count_q[6] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.331      ;
+; 1.078 ; spdif_core:u_core|subframe_count_q[7] ; spdif_core:u_core|preamble_q[4]       ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.342      ;
+; 1.080 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|bit_count_q[3]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.344      ;
+; 1.081 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|bit_count_q[4]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.345      ;
+; 1.088 ; spdif_core:u_core|subframe_count_q[7] ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.352      ;
+; 1.089 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.354      ;
+; 1.089 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.354      ;
+; 1.105 ; spdif_core:u_core|sample_buf_q[6]     ; spdif_core:u_core|audio_sample_q[6]   ; clk_i        ; clk_i       ; 0.000        ; 0.072      ; 1.366      ;
+; 1.113 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.378      ;
+; 1.118 ; spdif_core:u_core|sample_buf_q[10]    ; spdif_core:u_core|audio_sample_q[10]  ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.382      ;
+; 1.132 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[3] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.397      ;
+; 1.133 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.398      ;
+; 1.134 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.399      ;
+; 1.135 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.400      ;
+; 1.141 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|bit_count_q[5]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.405      ;
+; 1.157 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.422      ;
+; 1.157 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[3]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.421      ;
+; 1.158 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.423      ;
+; 1.158 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[4]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.422      ;
+; 1.170 ; spdif_core:u_core|subframe_count_q[8] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.435      ;
+; 1.170 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[2]   ; clk_i        ; clk_i       ; 0.000        ; 0.073      ; 1.432      ;
+; 1.182 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[3] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.447      ;
+; 1.183 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.448      ;
+; 1.185 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 0.000        ; 0.074      ; 1.448      ;
+; 1.194 ; spdif_core:u_core|bit_count_q[1]      ; spdif_core:u_core|bit_count_q[2]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.458      ;
+; 1.198 ; spdif_core:u_core|bit_toggle_q        ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.462      ;
+; 1.212 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.477      ;
+; 1.214 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|bit_count_q[5]      ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.478      ;
+; 1.214 ; spdif_core:u_core|subframe_count_q[6] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.479      ;
+; 1.235 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[13]  ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.500      ;
+; 1.235 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.500      ;
+; 1.235 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[15]  ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.500      ;
+; 1.235 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[9]   ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.500      ;
+; 1.235 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|preamble_q[5]       ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.500      ;
+; 1.235 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[14]  ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.500      ;
+; 1.235 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|preamble_q[4]       ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.500      ;
+; 1.235 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[12]  ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.500      ;
+; 1.243 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|preamble_q[4]       ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.507      ;
+; 1.254 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.075      ; 1.518      ;
+; 1.266 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.531      ;
+; 1.267 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.076      ; 1.532      ;
+; 1.271 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[1] ; clk_i        ; clk_i       ; 0.000        ; 0.077      ; 1.537      ;
+; 1.271 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[2] ; clk_i        ; clk_i       ; 0.000        ; 0.077      ; 1.537      ;
+; 1.271 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[0] ; clk_i        ; clk_i       ; 0.000        ; 0.077      ; 1.537      ;
+; 1.271 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[10]  ; clk_i        ; clk_i       ; 0.000        ; 0.077      ; 1.537      ;
+; 1.271 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.077      ; 1.537      ;
+; 1.271 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.077      ; 1.537      ;
+; 1.271 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.077      ; 1.537      ;
+; 1.271 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.077      ; 1.537      ;
+; 1.271 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.077      ; 1.537      ;
+; 1.271 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[3] ; clk_i        ; clk_i       ; 0.000        ; 0.077      ; 1.537      ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+------------------------------------------------
+; Slow 1200mV 125C Model Metastability Summary ;
+------------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV -40C Model Fmax Summary                                                                       ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 273.97 MHz ; 250.0 MHz       ; clk_i      ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------------+
+; Slow 1200mV -40C Model Setup Summary ;
++-------+--------+---------------------+
+; Clock ; Slack  ; End Point TNS       ;
++-------+--------+---------------------+
+; clk_i ; -2.650 ; -54.724             ;
++-------+--------+---------------------+
+
+
++-------------------------------------+
+; Slow 1200mV -40C Model Hold Summary ;
++-------+-------+---------------------+
+; Clock ; Slack ; End Point TNS       ;
++-------+-------+---------------------+
+; clk_i ; 0.357 ; 0.000               ;
++-------+-------+---------------------+
+
+
+-------------------------------------------
+; Slow 1200mV -40C Model Recovery Summary ;
+-------------------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Slow 1200mV -40C Model Removal Summary ;
+------------------------------------------
+No paths to report.
+
+
++----------------------------------------------------+
+; Slow 1200mV -40C Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------------------+
+; Clock ; Slack  ; End Point TNS                     ;
++-------+--------+-----------------------------------+
+; clk_i ; -3.000 ; -74.960                           ;
++-------+--------+-----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV -40C Model Setup: 'clk_i'                                                                                                                        ;
++--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.650 ; spdif_core:u_core|bit_count_q[1]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 3.587      ;
+; -2.612 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 3.549      ;
+; -2.497 ; spdif_core:u_core|audio_sample_q[14]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 3.433      ;
+; -2.369 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 3.306      ;
+; -2.277 ; spdif_core:u_core|audio_sample_q[10]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 3.213      ;
+; -2.252 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 3.189      ;
+; -2.251 ; spdif_core:u_core|audio_sample_q[9]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 3.187      ;
+; -2.228 ; spdif_core:u_core|bit_count_q[1]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 3.165      ;
+; -2.225 ; spdif_core:u_core|audio_sample_q[5]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 3.162      ;
+; -2.191 ; spdif_core:u_core|audio_sample_q[4]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 3.128      ;
+; -2.190 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 3.127      ;
+; -2.182 ; spdif_core:u_core|audio_sample_q[1]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 3.119      ;
+; -2.163 ; spdif_core:u_core|audio_sample_q[0]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 3.100      ;
+; -2.125 ; spdif_core:u_core|audio_sample_q[6]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 3.062      ;
+; -2.115 ; spdif_core:u_core|audio_sample_q[11]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 3.052      ;
+; -2.095 ; spdif_core:u_core|audio_sample_q[12]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 3.031      ;
+; -2.088 ; spdif_core:u_core|audio_sample_q[3]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 3.025      ;
+; -2.075 ; spdif_core:u_core|audio_sample_q[14]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 3.011      ;
+; -2.048 ; spdif_core:u_core|audio_sample_q[8]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.985      ;
+; -2.034 ; spdif_core:u_core|audio_sample_q[13]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 2.970      ;
+; -2.016 ; spdif_core:u_core|audio_sample_q[2]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.954      ;
+; -1.999 ; spdif_core:u_core|audio_sample_q[7]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.936      ;
+; -1.997 ; spdif_core:u_core|audio_sample_q[15]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 2.933      ;
+; -1.855 ; spdif_core:u_core|audio_sample_q[10]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 2.791      ;
+; -1.829 ; spdif_core:u_core|audio_sample_q[9]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 2.765      ;
+; -1.803 ; spdif_core:u_core|audio_sample_q[5]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.740      ;
+; -1.781 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.718      ;
+; -1.769 ; spdif_core:u_core|audio_sample_q[4]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.706      ;
+; -1.760 ; spdif_core:u_core|audio_sample_q[1]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.697      ;
+; -1.755 ; spdif_core:u_core|preamble_q[4]       ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 2.691      ;
+; -1.741 ; spdif_core:u_core|audio_sample_q[0]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.678      ;
+; -1.703 ; spdif_core:u_core|audio_sample_q[6]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.640      ;
+; -1.693 ; spdif_core:u_core|audio_sample_q[11]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.630      ;
+; -1.693 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.630      ;
+; -1.686 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.623      ;
+; -1.678 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.615      ;
+; -1.673 ; spdif_core:u_core|audio_sample_q[12]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 2.609      ;
+; -1.666 ; spdif_core:u_core|audio_sample_q[3]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.603      ;
+; -1.638 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[2]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.576      ;
+; -1.638 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[1]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.576      ;
+; -1.638 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[10]    ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.576      ;
+; -1.638 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[8]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.576      ;
+; -1.626 ; spdif_core:u_core|audio_sample_q[8]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.563      ;
+; -1.615 ; spdif_core:u_core|preamble_q[6]       ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 2.551      ;
+; -1.612 ; spdif_core:u_core|audio_sample_q[13]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 2.548      ;
+; -1.594 ; spdif_core:u_core|audio_sample_q[2]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.532      ;
+; -1.577 ; spdif_core:u_core|audio_sample_q[7]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.514      ;
+; -1.575 ; spdif_core:u_core|audio_sample_q[15]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 2.511      ;
+; -1.565 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.502      ;
+; -1.359 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.296      ;
+; -1.350 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.288      ;
+; -1.314 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[2]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.252      ;
+; -1.314 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[10]    ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.252      ;
+; -1.314 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[1]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.252      ;
+; -1.314 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[8]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.252      ;
+; -1.308 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.246      ;
+; -1.278 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[0]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.216      ;
+; -1.278 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[3]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.216      ;
+; -1.278 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[12]    ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.216      ;
+; -1.278 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[5]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.216      ;
+; -1.278 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[4]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.216      ;
+; -1.278 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[13]    ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.216      ;
+; -1.278 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[7]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.216      ;
+; -1.278 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[11]    ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.216      ;
+; -1.278 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[15]    ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.216      ;
+; -1.278 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[9]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.216      ;
+; -1.278 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[6]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.216      ;
+; -1.278 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[14]    ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.216      ;
+; -1.242 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.180      ;
+; -1.228 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.166      ;
+; -1.171 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.109      ;
+; -1.164 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.102      ;
+; -1.133 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.071      ;
+; -1.111 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.049      ;
+; -1.108 ; spdif_core:u_core|preamble_q[5]       ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.064     ; 2.044      ;
+; -1.075 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 2.012      ;
+; -1.068 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 2.006      ;
+; -1.053 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.991      ;
+; -1.048 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[11]  ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 1.985      ;
+; -1.046 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[4]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 1.983      ;
+; -1.040 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.978      ;
+; -1.029 ; spdif_core:u_core|subframe_count_q[7] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.967      ;
+; -1.026 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[12]  ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 1.963      ;
+; -1.003 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.941      ;
+; -0.986 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[8]   ; clk_i        ; clk_i       ; 1.000        ; -0.063     ; 1.923      ;
+; -0.960 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.898      ;
+; -0.958 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_req_o        ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.896      ;
+; -0.956 ; spdif_core:u_core|subframe_count_q[6] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.894      ;
+; -0.931 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[6]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.869      ;
+; -0.931 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[12]    ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.869      ;
+; -0.931 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[14]    ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.869      ;
+; -0.931 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[5]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.869      ;
+; -0.931 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[0]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.869      ;
+; -0.931 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[4]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.869      ;
+; -0.931 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[3]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.869      ;
+; -0.931 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[15]    ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.869      ;
+; -0.931 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[13]    ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.869      ;
+; -0.931 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[7]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.869      ;
+; -0.931 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[11]    ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.869      ;
+; -0.931 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[9]     ; clk_i        ; clk_i       ; 1.000        ; -0.062     ; 1.869      ;
++--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV -40C Model Hold: 'clk_i'                                                                                                                        ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.357 ; spdif_core:u_core|bit_toggle_q        ; spdif_core:u_core|bit_toggle_q        ; clk_i        ; clk_i       ; 0.000        ; 0.063      ; 0.588      ;
+; 0.357 ; spdif_core:u_core|parity_count_q[0]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 0.000        ; 0.063      ; 0.588      ;
+; 0.398 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|bit_count_q[5]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.628      ;
+; 0.589 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[1] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.819      ;
+; 0.591 ; spdif_core:u_core|subframe_count_q[6] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.821      ;
+; 0.591 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.821      ;
+; 0.593 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|bit_count_q[3]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.823      ;
+; 0.593 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.823      ;
+; 0.593 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[3] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.823      ;
+; 0.595 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[2] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.825      ;
+; 0.599 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|bit_count_q[4]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.829      ;
+; 0.608 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[0]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.838      ;
+; 0.630 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[0] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.860      ;
+; 0.645 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|bit_count_q[2]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.875      ;
+; 0.655 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.885      ;
+; 0.655 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.885      ;
+; 0.688 ; spdif_core:u_core|sample_buf_q[14]    ; spdif_core:u_core|audio_sample_q[14]  ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.918      ;
+; 0.718 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.948      ;
+; 0.743 ; spdif_core:u_core|sample_buf_q[7]     ; spdif_core:u_core|audio_sample_q[7]   ; clk_i        ; clk_i       ; 0.000        ; 0.061      ; 0.972      ;
+; 0.769 ; spdif_core:u_core|bit_count_q[1]      ; spdif_core:u_core|bit_count_q[1]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 0.999      ;
+; 0.809 ; spdif_core:u_core|subframe_count_q[8] ; spdif_core:u_core|preamble_q[4]       ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.039      ;
+; 0.814 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 0.000        ; 0.063      ; 1.045      ;
+; 0.825 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.055      ;
+; 0.825 ; spdif_core:u_core|sample_buf_q[13]    ; spdif_core:u_core|audio_sample_q[13]  ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.055      ;
+; 0.828 ; spdif_core:u_core|subframe_count_q[8] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.058      ;
+; 0.829 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.059      ;
+; 0.829 ; spdif_core:u_core|sample_buf_q[3]     ; spdif_core:u_core|audio_sample_q[3]   ; clk_i        ; clk_i       ; 0.000        ; 0.061      ; 1.058      ;
+; 0.829 ; spdif_core:u_core|subframe_count_q[8] ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.059      ;
+; 0.836 ; spdif_core:u_core|sample_buf_q[15]    ; spdif_core:u_core|audio_sample_q[15]  ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.066      ;
+; 0.836 ; spdif_core:u_core|spdif_out_q         ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 0.000        ; 0.063      ; 1.067      ;
+; 0.845 ; spdif_core:u_core|sample_buf_q[5]     ; spdif_core:u_core|audio_sample_q[5]   ; clk_i        ; clk_i       ; 0.000        ; 0.061      ; 1.074      ;
+; 0.845 ; spdif_core:u_core|sample_buf_q[1]     ; spdif_core:u_core|audio_sample_q[1]   ; clk_i        ; clk_i       ; 0.000        ; 0.061      ; 1.074      ;
+; 0.866 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[2] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.096      ;
+; 0.868 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[1]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.098      ;
+; 0.869 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.099      ;
+; 0.869 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.099      ;
+; 0.870 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|bit_count_q[4]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.100      ;
+; 0.871 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[3] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.101      ;
+; 0.871 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.101      ;
+; 0.871 ; spdif_core:u_core|sample_buf_q[9]     ; spdif_core:u_core|audio_sample_q[9]   ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.101      ;
+; 0.875 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|bit_count_q[5]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.105      ;
+; 0.882 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[2]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.112      ;
+; 0.883 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.113      ;
+; 0.885 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.115      ;
+; 0.890 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[1] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.120      ;
+; 0.900 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.130      ;
+; 0.903 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.133      ;
+; 0.904 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[2] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.134      ;
+; 0.907 ; spdif_core:u_core|subframe_count_q[7] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.137      ;
+; 0.917 ; spdif_core:u_core|subframe_count_q[7] ; spdif_core:u_core|preamble_q[4]       ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.147      ;
+; 0.918 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|bit_count_q[3]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.148      ;
+; 0.925 ; spdif_core:u_core|sample_buf_q[6]     ; spdif_core:u_core|audio_sample_q[6]   ; clk_i        ; clk_i       ; 0.000        ; 0.061      ; 1.154      ;
+; 0.932 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|bit_count_q[4]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.162      ;
+; 0.937 ; spdif_core:u_core|subframe_count_q[7] ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.167      ;
+; 0.938 ; spdif_core:u_core|subframe_count_q[6] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.168      ;
+; 0.939 ; spdif_core:u_core|sample_buf_q[10]    ; spdif_core:u_core|audio_sample_q[10]  ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.169      ;
+; 0.956 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[3] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.186      ;
+; 0.956 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.186      ;
+; 0.956 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.186      ;
+; 0.960 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|bit_count_q[5]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.190      ;
+; 0.961 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.191      ;
+; 0.964 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 0.000        ; 0.063      ; 1.195      ;
+; 0.970 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.200      ;
+; 0.972 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[3]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.202      ;
+; 0.975 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.205      ;
+; 0.975 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.205      ;
+; 0.986 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[4]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.216      ;
+; 0.988 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[2]   ; clk_i        ; clk_i       ; 0.000        ; 0.060      ; 1.216      ;
+; 0.989 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.219      ;
+; 0.994 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[3] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.224      ;
+; 1.008 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.238      ;
+; 1.018 ; spdif_core:u_core|bit_toggle_q        ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 0.000        ; 0.063      ; 1.249      ;
+; 1.022 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|bit_count_q[5]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.252      ;
+; 1.027 ; spdif_core:u_core|subframe_count_q[8] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.257      ;
+; 1.032 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.262      ;
+; 1.034 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|preamble_q[4]       ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.264      ;
+; 1.046 ; spdif_core:u_core|bit_count_q[1]      ; spdif_core:u_core|bit_count_q[2]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.276      ;
+; 1.053 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.283      ;
+; 1.060 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.290      ;
+; 1.063 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.293      ;
+; 1.065 ; spdif_core:u_core|subframe_count_q[6] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.295      ;
+; 1.074 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.304      ;
+; 1.076 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[5]      ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.306      ;
+; 1.079 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|preamble_q[4]       ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.309      ;
+; 1.083 ; spdif_core:u_core|subframe_count_q[6] ; spdif_core:u_core|preamble_q[4]       ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.313      ;
+; 1.085 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|preamble_q[4]       ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.315      ;
+; 1.085 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.315      ;
+; 1.097 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[6]   ; clk_i        ; clk_i       ; 0.000        ; 0.061      ; 1.326      ;
+; 1.098 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.328      ;
+; 1.103 ; spdif_core:u_core|subframe_count_q[6] ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.333      ;
+; 1.104 ; spdif_core:u_core|sample_buf_q[12]    ; spdif_core:u_core|audio_sample_q[12]  ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.334      ;
+; 1.105 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.062      ; 1.335      ;
+; 1.105 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[13]  ; clk_i        ; clk_i       ; 0.000        ; 0.063      ; 1.336      ;
+; 1.105 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.063      ; 1.336      ;
+; 1.105 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[12]  ; clk_i        ; clk_i       ; 0.000        ; 0.063      ; 1.336      ;
+; 1.105 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[15]  ; clk_i        ; clk_i       ; 0.000        ; 0.063      ; 1.336      ;
+; 1.105 ; spdif_core:u_core|sample_buf_q[8]     ; spdif_core:u_core|audio_sample_q[8]   ; clk_i        ; clk_i       ; 0.000        ; 0.061      ; 1.334      ;
+; 1.105 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[9]   ; clk_i        ; clk_i       ; 0.000        ; 0.063      ; 1.336      ;
+; 1.105 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[14]  ; clk_i        ; clk_i       ; 0.000        ; 0.063      ; 1.336      ;
+; 1.105 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|preamble_q[5]       ; clk_i        ; clk_i       ; 0.000        ; 0.063      ; 1.336      ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+------------------------------------------------
+; Slow 1200mV -40C Model Metastability Summary ;
+------------------------------------------------
+No synchronizer chains to report.
+
+
++--------------------------------------+
+; Fast 1200mV -40C Model Setup Summary ;
++-------+--------+---------------------+
+; Clock ; Slack  ; End Point TNS       ;
++-------+--------+---------------------+
+; clk_i ; -0.862 ; -6.420              ;
++-------+--------+---------------------+
+
+
++-------------------------------------+
+; Fast 1200mV -40C Model Hold Summary ;
++-------+-------+---------------------+
+; Clock ; Slack ; End Point TNS       ;
++-------+-------+---------------------+
+; clk_i ; 0.183 ; 0.000               ;
++-------+-------+---------------------+
+
+
+-------------------------------------------
+; Fast 1200mV -40C Model Recovery Summary ;
+-------------------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Fast 1200mV -40C Model Removal Summary ;
+------------------------------------------
+No paths to report.
+
+
++----------------------------------------------------+
+; Fast 1200mV -40C Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------------------+
+; Clock ; Slack  ; End Point TNS                     ;
++-------+--------+-----------------------------------+
+; clk_i ; -3.000 ; -63.542                           ;
++-------+--------+-----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV -40C Model Setup: 'clk_i'                                                                                                                        ;
++--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.862 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.814      ;
+; -0.849 ; spdif_core:u_core|bit_count_q[1]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.801      ;
+; -0.771 ; spdif_core:u_core|audio_sample_q[14]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.723      ;
+; -0.755 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.707      ;
+; -0.710 ; spdif_core:u_core|audio_sample_q[10]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.037     ; 1.661      ;
+; -0.675 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.627      ;
+; -0.659 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.611      ;
+; -0.657 ; spdif_core:u_core|audio_sample_q[9]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.609      ;
+; -0.650 ; spdif_core:u_core|audio_sample_q[6]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.602      ;
+; -0.649 ; spdif_core:u_core|audio_sample_q[5]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.601      ;
+; -0.646 ; spdif_core:u_core|audio_sample_q[1]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.598      ;
+; -0.646 ; spdif_core:u_core|bit_count_q[1]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.598      ;
+; -0.627 ; spdif_core:u_core|audio_sample_q[4]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.579      ;
+; -0.624 ; spdif_core:u_core|audio_sample_q[3]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.576      ;
+; -0.623 ; spdif_core:u_core|audio_sample_q[0]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.575      ;
+; -0.611 ; spdif_core:u_core|audio_sample_q[11]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.563      ;
+; -0.572 ; spdif_core:u_core|audio_sample_q[2]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.526      ;
+; -0.568 ; spdif_core:u_core|audio_sample_q[14]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.520      ;
+; -0.563 ; spdif_core:u_core|audio_sample_q[13]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.515      ;
+; -0.562 ; spdif_core:u_core|audio_sample_q[7]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.514      ;
+; -0.553 ; spdif_core:u_core|audio_sample_q[12]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.505      ;
+; -0.551 ; spdif_core:u_core|audio_sample_q[8]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.503      ;
+; -0.540 ; spdif_core:u_core|audio_sample_q[15]  ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.492      ;
+; -0.507 ; spdif_core:u_core|audio_sample_q[10]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.037     ; 1.458      ;
+; -0.454 ; spdif_core:u_core|audio_sample_q[9]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.406      ;
+; -0.447 ; spdif_core:u_core|audio_sample_q[6]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.399      ;
+; -0.446 ; spdif_core:u_core|audio_sample_q[5]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.398      ;
+; -0.443 ; spdif_core:u_core|audio_sample_q[1]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.395      ;
+; -0.440 ; spdif_core:u_core|preamble_q[4]       ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.392      ;
+; -0.429 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.381      ;
+; -0.424 ; spdif_core:u_core|audio_sample_q[4]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.376      ;
+; -0.421 ; spdif_core:u_core|audio_sample_q[3]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.373      ;
+; -0.420 ; spdif_core:u_core|audio_sample_q[0]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.372      ;
+; -0.408 ; spdif_core:u_core|audio_sample_q[11]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.360      ;
+; -0.398 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.350      ;
+; -0.391 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.343      ;
+; -0.390 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.342      ;
+; -0.378 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[2]     ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.331      ;
+; -0.378 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[1]     ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.331      ;
+; -0.378 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[10]    ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.331      ;
+; -0.378 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[8]     ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.331      ;
+; -0.369 ; spdif_core:u_core|audio_sample_q[2]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.323      ;
+; -0.360 ; spdif_core:u_core|audio_sample_q[13]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.312      ;
+; -0.359 ; spdif_core:u_core|audio_sample_q[7]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.311      ;
+; -0.358 ; spdif_core:u_core|preamble_q[6]       ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.310      ;
+; -0.350 ; spdif_core:u_core|audio_sample_q[12]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.302      ;
+; -0.348 ; spdif_core:u_core|audio_sample_q[8]   ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.300      ;
+; -0.337 ; spdif_core:u_core|audio_sample_q[15]  ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.289      ;
+; -0.329 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.281      ;
+; -0.273 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.226      ;
+; -0.247 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.200      ;
+; -0.226 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.178      ;
+; -0.210 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.163      ;
+; -0.206 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[12]    ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.160      ;
+; -0.206 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[7]     ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.160      ;
+; -0.206 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[0]     ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.160      ;
+; -0.206 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[5]     ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.160      ;
+; -0.206 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[13]    ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.160      ;
+; -0.206 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[3]     ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.160      ;
+; -0.206 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[4]     ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.160      ;
+; -0.206 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[11]    ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.160      ;
+; -0.206 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[15]    ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.160      ;
+; -0.206 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[9]     ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.160      ;
+; -0.206 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[6]     ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.160      ;
+; -0.206 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_buf_q[14]    ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.160      ;
+; -0.187 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[10]    ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.141      ;
+; -0.187 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[2]     ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.141      ;
+; -0.187 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[1]     ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.141      ;
+; -0.187 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[8]     ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 1.141      ;
+; -0.172 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.125      ;
+; -0.166 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.119      ;
+; -0.144 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.097      ;
+; -0.141 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.094      ;
+; -0.137 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.090      ;
+; -0.102 ; spdif_core:u_core|preamble_q[5]       ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.054      ;
+; -0.099 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.052      ;
+; -0.092 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.045      ;
+; -0.085 ; spdif_core:u_core|subframe_count_q[7] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.038      ;
+; -0.079 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[0]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.031      ;
+; -0.078 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.031      ;
+; -0.069 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[11]  ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.021      ;
+; -0.066 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[4]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.018      ;
+; -0.059 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.012      ;
+; -0.059 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[12]  ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 1.011      ;
+; -0.056 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 1.009      ;
+; -0.036 ; spdif_core:u_core|subframe_count_q[6] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 1.000        ; -0.035     ; 0.989      ;
+; -0.028 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[8]   ; clk_i        ; clk_i       ; 1.000        ; -0.036     ; 0.980      ;
+; -0.028 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|sample_req_o        ; clk_i        ; clk_i       ; 1.000        ; -0.034     ; 0.982      ;
+; -0.015 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[0]     ; clk_i        ; clk_i       ; 1.000        ; -0.033     ; 0.970      ;
+; -0.015 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[6]     ; clk_i        ; clk_i       ; 1.000        ; -0.033     ; 0.970      ;
+; -0.015 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[12]    ; clk_i        ; clk_i       ; 1.000        ; -0.033     ; 0.970      ;
+; -0.015 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[7]     ; clk_i        ; clk_i       ; 1.000        ; -0.033     ; 0.970      ;
+; -0.015 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[3]     ; clk_i        ; clk_i       ; 1.000        ; -0.033     ; 0.970      ;
+; -0.015 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[9]     ; clk_i        ; clk_i       ; 1.000        ; -0.033     ; 0.970      ;
+; -0.015 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[5]     ; clk_i        ; clk_i       ; 1.000        ; -0.033     ; 0.970      ;
+; -0.015 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[13]    ; clk_i        ; clk_i       ; 1.000        ; -0.033     ; 0.970      ;
+; -0.015 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[14]    ; clk_i        ; clk_i       ; 1.000        ; -0.033     ; 0.970      ;
+; -0.015 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[4]     ; clk_i        ; clk_i       ; 1.000        ; -0.033     ; 0.970      ;
+; -0.015 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[11]    ; clk_i        ; clk_i       ; 1.000        ; -0.033     ; 0.970      ;
+; -0.015 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|sample_buf_q[15]    ; clk_i        ; clk_i       ; 1.000        ; -0.033     ; 0.970      ;
++--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV -40C Model Hold: 'clk_i'                                                                                                                        ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.183 ; spdif_core:u_core|bit_toggle_q        ; spdif_core:u_core|bit_toggle_q        ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.300      ;
+; 0.183 ; spdif_core:u_core|parity_count_q[0]   ; spdif_core:u_core|parity_count_q[0]   ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.300      ;
+; 0.195 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|bit_count_q[5]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.312      ;
+; 0.284 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[3] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.401      ;
+; 0.285 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.402      ;
+; 0.285 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.402      ;
+; 0.285 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[2] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.402      ;
+; 0.286 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[1] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.403      ;
+; 0.286 ; spdif_core:u_core|subframe_count_q[6] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.403      ;
+; 0.288 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|bit_count_q[3]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.405      ;
+; 0.289 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|bit_count_q[4]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.406      ;
+; 0.297 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[0]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.414      ;
+; 0.310 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[0] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.427      ;
+; 0.320 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|bit_count_q[2]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.437      ;
+; 0.326 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.443      ;
+; 0.327 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.444      ;
+; 0.346 ; spdif_core:u_core|sample_buf_q[14]    ; spdif_core:u_core|audio_sample_q[14]  ; clk_i        ; clk_i       ; 0.000        ; 0.033      ; 0.461      ;
+; 0.347 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.464      ;
+; 0.366 ; spdif_core:u_core|bit_count_q[1]      ; spdif_core:u_core|bit_count_q[1]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.483      ;
+; 0.368 ; spdif_core:u_core|sample_buf_q[7]     ; spdif_core:u_core|audio_sample_q[7]   ; clk_i        ; clk_i       ; 0.000        ; 0.033      ; 0.483      ;
+; 0.391 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.508      ;
+; 0.396 ; spdif_core:u_core|subframe_count_q[8] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.513      ;
+; 0.398 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.515      ;
+; 0.398 ; spdif_core:u_core|sample_buf_q[13]    ; spdif_core:u_core|audio_sample_q[13]  ; clk_i        ; clk_i       ; 0.000        ; 0.033      ; 0.513      ;
+; 0.400 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.517      ;
+; 0.400 ; spdif_core:u_core|sample_buf_q[3]     ; spdif_core:u_core|audio_sample_q[3]   ; clk_i        ; clk_i       ; 0.000        ; 0.033      ; 0.515      ;
+; 0.404 ; spdif_core:u_core|sample_buf_q[5]     ; spdif_core:u_core|audio_sample_q[5]   ; clk_i        ; clk_i       ; 0.000        ; 0.033      ; 0.519      ;
+; 0.406 ; spdif_core:u_core|sample_buf_q[15]    ; spdif_core:u_core|audio_sample_q[15]  ; clk_i        ; clk_i       ; 0.000        ; 0.033      ; 0.521      ;
+; 0.408 ; spdif_core:u_core|sample_buf_q[1]     ; spdif_core:u_core|audio_sample_q[1]   ; clk_i        ; clk_i       ; 0.000        ; 0.034      ; 0.524      ;
+; 0.418 ; spdif_core:u_core|sample_buf_q[9]     ; spdif_core:u_core|audio_sample_q[9]   ; clk_i        ; clk_i       ; 0.000        ; 0.033      ; 0.533      ;
+; 0.428 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.545      ;
+; 0.429 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.546      ;
+; 0.430 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[2] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.547      ;
+; 0.430 ; spdif_core:u_core|spdif_out_q         ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.547      ;
+; 0.432 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|bit_count_q[4]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.549      ;
+; 0.432 ; spdif_core:u_core|subframe_count_q[8] ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.034      ; 0.548      ;
+; 0.434 ; spdif_core:u_core|subframe_count_q[7] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.551      ;
+; 0.435 ; spdif_core:u_core|subframe_count_q[8] ; spdif_core:u_core|preamble_q[4]       ; clk_i        ; clk_i       ; 0.000        ; 0.034      ; 0.551      ;
+; 0.438 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[3] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.555      ;
+; 0.438 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.555      ;
+; 0.440 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.557      ;
+; 0.440 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.557      ;
+; 0.441 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.558      ;
+; 0.441 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[1]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.558      ;
+; 0.442 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.559      ;
+; 0.442 ; spdif_core:u_core|bit_count_q[4]      ; spdif_core:u_core|bit_count_q[5]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.559      ;
+; 0.443 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[2]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.560      ;
+; 0.454 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[1] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.571      ;
+; 0.455 ; spdif_core:u_core|subframe_count_q[6] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.572      ;
+; 0.456 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[2] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.573      ;
+; 0.456 ; spdif_core:u_core|sample_buf_q[6]     ; spdif_core:u_core|audio_sample_q[6]   ; clk_i        ; clk_i       ; 0.000        ; 0.033      ; 0.571      ;
+; 0.461 ; spdif_core:u_core|subframe_count_q[5] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.578      ;
+; 0.462 ; spdif_core:u_core|subframe_count_q[4] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.579      ;
+; 0.464 ; spdif_core:u_core|sample_buf_q[10]    ; spdif_core:u_core|audio_sample_q[10]  ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.581      ;
+; 0.472 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|bit_count_q[3]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.589      ;
+; 0.474 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|bit_count_q[4]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.591      ;
+; 0.475 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|load_subframe_q     ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.592      ;
+; 0.481 ; spdif_core:u_core|subframe_count_q[7] ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.034      ; 0.597      ;
+; 0.484 ; spdif_core:u_core|subframe_count_q[7] ; spdif_core:u_core|preamble_q[4]       ; clk_i        ; clk_i       ; 0.000        ; 0.034      ; 0.600      ;
+; 0.486 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.603      ;
+; 0.488 ; spdif_core:u_core|subframe_count_q[3] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.605      ;
+; 0.488 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[3] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.605      ;
+; 0.490 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.607      ;
+; 0.490 ; spdif_core:u_core|bit_count_q[3]      ; spdif_core:u_core|bit_count_q[5]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.607      ;
+; 0.497 ; spdif_core:u_core|subframe_count_q[8] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.614      ;
+; 0.498 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.615      ;
+; 0.500 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.617      ;
+; 0.501 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[3]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.618      ;
+; 0.502 ; spdif_core:u_core|bit_count_q[5]      ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 0.000        ; 0.034      ; 0.618      ;
+; 0.503 ; spdif_core:u_core|bit_count_q[0]      ; spdif_core:u_core|bit_count_q[4]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.620      ;
+; 0.506 ; spdif_core:u_core|bit_toggle_q        ; spdif_core:u_core|spdif_out_q         ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.623      ;
+; 0.510 ; spdif_core:u_core|bit_count_q[1]      ; spdif_core:u_core|bit_count_q[2]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.627      ;
+; 0.514 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[3] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.631      ;
+; 0.514 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[2]   ; clk_i        ; clk_i       ; 0.000        ; 0.032      ; 0.628      ;
+; 0.515 ; spdif_core:u_core|subframe_count_q[2] ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.632      ;
+; 0.516 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.633      ;
+; 0.518 ; spdif_core:u_core|subframe_count_q[6] ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.635      ;
+; 0.532 ; spdif_core:u_core|bit_count_q[2]      ; spdif_core:u_core|bit_count_q[5]      ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.649      ;
+; 0.532 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|preamble_q[4]       ; clk_i        ; clk_i       ; 0.000        ; 0.034      ; 0.648      ;
+; 0.536 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.034      ; 0.652      ;
+; 0.537 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[13]  ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.654      ;
+; 0.537 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|preamble_q[6]       ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.654      ;
+; 0.537 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[15]  ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.654      ;
+; 0.537 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[9]   ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.654      ;
+; 0.537 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[12]  ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.654      ;
+; 0.537 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|preamble_q[5]       ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.654      ;
+; 0.537 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[14]  ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.654      ;
+; 0.537 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|preamble_q[4]       ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.654      ;
+; 0.546 ; spdif_core:u_core|subframe_count_q[0] ; spdif_core:u_core|audio_sample_q[6]   ; clk_i        ; clk_i       ; 0.000        ; 0.034      ; 0.662      ;
+; 0.548 ; spdif_core:u_core|subframe_count_q[1] ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.035      ; 0.665      ;
+; 0.548 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[0] ; clk_i        ; clk_i       ; 0.000        ; 0.036      ; 0.666      ;
+; 0.548 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[1] ; clk_i        ; clk_i       ; 0.000        ; 0.036      ; 0.666      ;
+; 0.548 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[2] ; clk_i        ; clk_i       ; 0.000        ; 0.036      ; 0.666      ;
+; 0.548 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|audio_sample_q[10]  ; clk_i        ; clk_i       ; 0.000        ; 0.036      ; 0.666      ;
+; 0.548 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[8] ; clk_i        ; clk_i       ; 0.000        ; 0.036      ; 0.666      ;
+; 0.548 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[7] ; clk_i        ; clk_i       ; 0.000        ; 0.036      ; 0.666      ;
+; 0.548 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[6] ; clk_i        ; clk_i       ; 0.000        ; 0.036      ; 0.666      ;
+; 0.548 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[5] ; clk_i        ; clk_i       ; 0.000        ; 0.036      ; 0.666      ;
+; 0.548 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[4] ; clk_i        ; clk_i       ; 0.000        ; 0.036      ; 0.666      ;
+; 0.548 ; spdif_core:u_core|load_subframe_q     ; spdif_core:u_core|subframe_count_q[3] ; clk_i        ; clk_i       ; 0.000        ; 0.036      ; 0.666      ;
++-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+------------------------------------------------
+; Fast 1200mV -40C Model Metastability Summary ;
+------------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -3.142  ; 0.183 ; N/A      ; N/A     ; -3.000              ;
+;  clk_i           ; -3.142  ; 0.183 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -72.285 ; 0.0   ; 0.0      ; 0.0     ; -86.272             ;
+;  clk_i           ; -72.285 ; 0.000 ; N/A      ; N/A     ; -86.272             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                      ;
++-----------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin             ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++-----------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; inport_tready_o ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; spdif_o         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++-----------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; inport_tvalid_i         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tstrb_i[0]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tstrb_i[1]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tstrb_i[2]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tstrb_i[3]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdest_i[0]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdest_i[1]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdest_i[2]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdest_i[3]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tlast_i          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clk_i                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; rst_i                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; audio_clk_i             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[6]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[5]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[4]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[7]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[13]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[14]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[12]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[15]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[2]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[1]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[0]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[3]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[10]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[9]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[8]       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[11]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[22]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[21]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[20]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[23]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[29]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[30]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[28]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[31]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[18]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[17]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[16]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[19]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[26]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[25]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[24]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; inport_tdata_i[27]      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv n40c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin             ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; inport_tready_o ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.74e-09 V                   ; 2.4 V               ; -0.0195 V           ; 0.196 V                              ; 0.023 V                              ; 2.87e-10 s                  ; 3.09e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.74e-09 V                  ; 2.4 V              ; -0.0195 V          ; 0.196 V                             ; 0.023 V                             ; 2.87e-10 s                 ; 3.09e-10 s                 ; Yes                       ; Yes                       ;
+; spdif_o         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.74e-09 V                   ; 2.4 V               ; -0.0195 V           ; 0.196 V                              ; 0.023 V                              ; 2.87e-10 s                  ; 3.09e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.74e-09 V                  ; 2.4 V              ; -0.0195 V          ; 0.196 V                             ; 0.023 V                             ; 2.87e-10 s                 ; 3.09e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-09 V                   ; 2.39 V              ; -0.0798 V           ; 0.13 V                               ; 0.103 V                              ; 2.71e-10 s                  ; 2.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-09 V                  ; 2.39 V             ; -0.0798 V          ; 0.13 V                              ; 0.103 V                             ; 2.71e-10 s                 ; 2.5e-10 s                  ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.64e-09 V                   ; 2.39 V              ; -0.00331 V          ; 0.132 V                              ; 0.006 V                              ; 4.59e-10 s                  ; 5.62e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.64e-09 V                  ; 2.39 V             ; -0.00331 V         ; 0.132 V                             ; 0.006 V                             ; 4.59e-10 s                 ; 5.62e-10 s                 ; No                        ; Yes                       ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 125c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin             ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; inport_tready_o ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.32e-06 V                   ; 2.35 V              ; -0.0124 V           ; 0.057 V                              ; 0.05 V                               ; 4.87e-10 s                  ; 5.02e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.32e-06 V                  ; 2.35 V             ; -0.0124 V          ; 0.057 V                             ; 0.05 V                              ; 4.87e-10 s                 ; 5.02e-10 s                 ; Yes                       ; Yes                       ;
+; spdif_o         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.32e-06 V                   ; 2.35 V              ; -0.0124 V           ; 0.057 V                              ; 0.05 V                               ; 4.87e-10 s                  ; 5.02e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.32e-06 V                  ; 2.35 V             ; -0.0124 V          ; 0.057 V                             ; 0.05 V                              ; 4.87e-10 s                 ; 5.02e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.33e-06 V                   ; 2.35 V              ; -0.00598 V          ; 0.095 V                              ; 0.012 V                              ; 4.54e-10 s                  ; 3.98e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.33e-06 V                  ; 2.35 V             ; -0.00598 V         ; 0.095 V                             ; 0.012 V                             ; 4.54e-10 s                 ; 3.98e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.86e-06 V                   ; 2.34 V              ; -0.00776 V          ; 0.107 V                              ; 0.033 V                              ; 6.63e-10 s                  ; 8.55e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.86e-06 V                  ; 2.34 V             ; -0.00776 V         ; 0.107 V                             ; 0.033 V                             ; 6.63e-10 s                 ; 8.55e-10 s                 ; Yes                       ; Yes                       ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv n40c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin             ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; inport_tready_o ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.18e-09 V                   ; 2.74 V              ; -0.0527 V           ; 0.162 V                              ; 0.083 V                              ; 2.61e-10 s                  ; 2.44e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.18e-09 V                  ; 2.74 V             ; -0.0527 V          ; 0.162 V                             ; 0.083 V                             ; 2.61e-10 s                 ; 2.44e-10 s                 ; Yes                       ; Yes                       ;
+; spdif_o         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.18e-09 V                   ; 2.74 V              ; -0.0527 V           ; 0.162 V                              ; 0.083 V                              ; 2.61e-10 s                  ; 2.44e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.18e-09 V                  ; 2.74 V             ; -0.0527 V          ; 0.162 V                             ; 0.083 V                             ; 2.61e-10 s                 ; 2.44e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 1.87e-09 V                   ; 2.79 V              ; -0.0524 V           ; 0.19 V                               ; 0.066 V                              ; 2.63e-10 s                  ; 1.96e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 1.87e-09 V                  ; 2.79 V             ; -0.0524 V          ; 0.19 V                              ; 0.066 V                             ; 2.63e-10 s                 ; 1.96e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.91e-09 V                   ; 2.73 V              ; -0.0159 V           ; 0.231 V                              ; 0.026 V                              ; 2.89e-10 s                  ; 4.54e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.91e-09 V                  ; 2.73 V             ; -0.0159 V          ; 0.231 V                             ; 0.026 V                             ; 2.89e-10 s                 ; 4.54e-10 s                 ; Yes                       ; Yes                       ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk_i      ; clk_i    ; 314      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk_i      ; clk_i    ; 314      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 34    ; 34   ;
+; Unconstrained Input Port Paths  ; 98    ; 98   ;
+; Unconstrained Output Ports      ; 2     ; 2    ;
+; Unconstrained Output Port Paths ; 2     ; 2    ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clk_i  ; clk_i ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                 ;
++--------------------+--------------------------------------------------------------------------------------+
+; Input Port         ; Comment                                                                              ;
++--------------------+--------------------------------------------------------------------------------------+
+; audio_clk_i        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[8]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[9]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[10] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[11] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[12] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[13] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[14] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[15] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[16] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[17] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[18] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[19] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[20] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[21] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[22] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[23] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[24] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[25] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[26] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[27] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[28] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[29] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[30] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[31] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst_i              ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++--------------------+--------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                              ;
++-----------------+---------------------------------------------------------------------------------------+
+; Output Port     ; Comment                                                                               ;
++-----------------+---------------------------------------------------------------------------------------+
+; inport_tready_o ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; spdif_o         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-----------------+---------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                 ;
++--------------------+--------------------------------------------------------------------------------------+
+; Input Port         ; Comment                                                                              ;
++--------------------+--------------------------------------------------------------------------------------+
+; audio_clk_i        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[1]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[2]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[3]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[4]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[5]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[6]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[7]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[8]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[9]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[10] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[11] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[12] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[13] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[14] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[15] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[16] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[17] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[18] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[19] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[20] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[21] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[22] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[23] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[24] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[25] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[26] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[27] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[28] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[29] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[30] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inport_tdata_i[31] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst_i              ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++--------------------+--------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                              ;
++-----------------+---------------------------------------------------------------------------------------+
+; Output Port     ; Comment                                                                               ;
++-----------------+---------------------------------------------------------------------------------------+
+; inport_tready_o ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; spdif_o         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-----------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Tue Jun 01 20:09:32 2021
+Info: Command: quartus_sta I2S -c I2S
+Info: qsta_default_script.tcl version: #3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is -40 degrees C
+Info (21077): High junction temperature is 125 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'I2S.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk_i clk_i
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 125C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -3.142
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.142             -72.285 clk_i 
+Info (332146): Worst-case hold slack is 0.429
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.429               0.000 clk_i 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -86.272 clk_i 
+Info: Analyzing Slow 1200mV -40C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.650
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.650             -54.724 clk_i 
+Info (332146): Worst-case hold slack is 0.357
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.357               0.000 clk_i 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -74.960 clk_i 
+Info: Analyzing Fast 1200mV -40C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.862
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.862              -6.420 clk_i 
+Info (332146): Worst-case hold slack is 0.183
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.183               0.000 clk_i 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -63.542 clk_i 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4745 megabytes
+    Info: Processing ended: Tue Jun 01 20:09:34 2021
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

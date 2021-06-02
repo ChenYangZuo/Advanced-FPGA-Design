@@ -1,0 +1,11 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+D:/Programme/Verilog/I2S {D:/Programme/Verilog/I2S/i2s_top.v}
+vlog -vlog01compat -work work +incdir+D:/Programme/Verilog/I2S {D:/Programme/Verilog/I2S/i2s_tx.v}
+vlog -vlog01compat -work work +incdir+D:/Programme/Verilog/I2S {D:/Programme/Verilog/I2S/i2s_rx.v}
+

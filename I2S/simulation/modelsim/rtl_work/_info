@@ -1,0 +1,98 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Programme/Verilog/I2S/simulation/modelsim
+vi2s_rx
+Z1 !s110 1622169540
+!i10b 1
+!s100 1667Q`4ai9`=5VC9D3AMN0
+IlO43kND`Y[GL@InQJGBOn2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1622093875
+8D:/Programme/Verilog/I2S/i2s_rx.v
+FD:/Programme/Verilog/I2S/i2s_rx.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1622169540.000000
+!s107 D:/Programme/Verilog/I2S/i2s_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Programme/Verilog/I2S|D:/Programme/Verilog/I2S/i2s_rx.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+D:/Programme/Verilog/I2S
+Z7 tCvgOpt 0
+vi2s_top
+R1
+!i10b 1
+!s100 KZj=nE`26im_l5K?SDF1M2
+IBGVa6gDRe5I1cV5YOeF6h3
+R2
+R0
+w1622089066
+8D:/Programme/Verilog/I2S/i2s_top.v
+FD:/Programme/Verilog/I2S/i2s_top.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Programme/Verilog/I2S/i2s_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Programme/Verilog/I2S|D:/Programme/Verilog/I2S/i2s_top.v|
+!i113 1
+R5
+R6
+R7
+vi2s_top_vlg_tst
+R1
+!i10b 1
+!s100 d0:gNHOQl1:=S7>aSDj7_1
+Ik9ml^a9zc:Nd>oJhhFdCZ3
+R2
+R0
+w1622092256
+8D:/Programme/Verilog/I2S/simulation/modelsim/i2s_top.vt
+FD:/Programme/Verilog/I2S/simulation/modelsim/i2s_top.vt
+L0 28
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Programme/Verilog/I2S/simulation/modelsim/i2s_top.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Programme/Verilog/I2S/simulation/modelsim|D:/Programme/Verilog/I2S/simulation/modelsim/i2s_top.vt|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+D:/Programme/Verilog/I2S/simulation/modelsim
+R7
+vi2s_tx
+R1
+!i10b 1
+!s100 EdWE_8WjZIK:[KAb:S[8]0
+ImI2[VgffW:02jVKOiG45h2
+R2
+R0
+w1622089178
+8D:/Programme/Verilog/I2S/i2s_tx.v
+FD:/Programme/Verilog/I2S/i2s_tx.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Programme/Verilog/I2S/i2s_tx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Programme/Verilog/I2S|D:/Programme/Verilog/I2S/i2s_tx.v|
+!i113 1
+R5
+R6
+R7
